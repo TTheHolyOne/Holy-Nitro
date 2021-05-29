@@ -84,10 +84,8 @@ namespace NitroGenerator
 
                 try
                 {
-                    //string[] proxys = File.ReadAllLines("proxy.txt");
                     Random proxySelect = new Random();
                     WebClient wc = new WebClient();
-                    //wc.Proxy = new WebProxy(proxys[proxySelect.Next(0,proxys.Length-1)]);
                     wc.Proxy = null;
                     string data = wc.DownloadString("https://discordapp.com/api/v6/entitlements/gift-codes/" + gift);
                     dynamic jo = JObject.Parse(data);
